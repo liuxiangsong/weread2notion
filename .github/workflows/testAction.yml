@@ -17,4 +17,4 @@ jobs:
       YEAR: ${{ vars.YEAR }}
     steps:
       - name: 输出
-        run: echo url is ${{ secrets.CC_URL }}, id is secrets.CC_ID
+        run: echo url is ${{ secrets.CC_URL }}, id is  ${{ github.ref }} "$GITHUB_CONTEXT" 
