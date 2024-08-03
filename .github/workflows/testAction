@@ -1,0 +1,20 @@
+name: test action
+
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    name: 测试
+    runs-on: ubuntu-latest
+    env:
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      NOTION_PAGE: ${{ secrets.NOTION_PAGE }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
+      CC_URL: ${{ secrets.CC_URL }}
+      CC_ID: ${{ secrets.CC_ID }}
+      CC_PASSWORD: ${{ secrets.CC_PASSWORD }}
+      YEAR: ${{ vars.YEAR }}
+    steps:
+      - name: 输出
+        run: echo url is ${{ secrets.CC_URL }}, id is secrets.CC_ID
